@@ -8,8 +8,6 @@ plugins {
 android {
     namespace = "com.example.med_reminder_flutter"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
-
     compileOptions {
         isCoreLibraryDesugaringEnabled = true
         sourceCompatibility = JavaVersion.VERSION_11
@@ -22,7 +20,7 @@ android {
 
     defaultConfig {
         applicationId = "com.example.med_reminder_flutter"
-        minSdk = 21
+        minSdk = flutter.minSdkVersion
         targetSdk = flutter.targetSdkVersion
         versionCode = flutter.versionCode
         versionName = flutter.versionName
@@ -37,4 +35,9 @@ android {
 }
 
 dependencies {
-    coreLibraryDesugaring("com.androi...
+    coreLibraryDesugaring("com.android.tools:desugar_jdk_libs:2.1.4")
+}
+
+flutter {
+    source = "../.."
+}
